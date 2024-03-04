@@ -1,39 +1,46 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Text, View, Image, ScrollView,Button } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, Button } from 'react-native';
 
 export default function App() {
-  const [name,setName] = useState("saa");
   return (
     <View style={styles.container}>
-      <Header title="screen 1" />
-      <Header title="screen 2" />
-      <Header title="screen 3" />
-      <Header title="screen 4" />
-      <Header title="screen 5" />
-      <Text>{name}</Text>
-      <Button title='Change it to full name' onPress={()=>{setName("arman Kabir")}}></Button>
-    </View>
-  );
-};
-function Header(props){
-  const {title} = props;
-  return (
-    <View style={{backgroundColor:'red',marginVertical:20,height:60,alignItems:"center",justifyContent:'center',padding:10}}>
-      <Text>{title}</Text>
+      {/* <Text style={{ fontWeight: "bold", color: "white", fontSize: 28, backgroundColor: "blue", padding: 20 }}>Hello World</Text> */}
+      
+      <View style={styles.box1} />
+      <View style={styles.box2} />
+      <View style={styles.box3} />
+      <View />
     </View>
   )
-}
+};
+
+
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // flex:1,
+    height: 200,
+    width: 300,
+    padding:20
+    // backgroundColor: "red"
   },
-  textContainer:{
-    width:200,
-    backgroundColor:"red"
+  box1:{
+    height:50,
+    width:50,
+    backgroundColor:"yellow",
+    padding:20
+  },
+  box2:{
+    height:50,
+    width:50,
+    backgroundColor:"green",
+    padding:20
+  },
+  box3:{
+    height:50,
+    width:50,
+    backgroundColor:"orange",
+    padding:20
   }
 });
