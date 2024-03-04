@@ -1,40 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Image, ScrollView,Button } from 'react-native';
 
 export default function App() {
+  const [name,setName] = useState("saa");
   return (
     <View style={styles.container}>
-      <ScrollView>
-        {/* <Text>Hello World ! </Text> */}
-        {/* <StatusBar style="auto" /> */}
-        {/* <View style={{ width: 200, height: 200, backgroundColor: 'red' }} /> */}
-        {/* <View style={{ width: 200, height: 200, backgroundColor: 'blue' }} /> */}
-        <Text style={{ fontWeight: "bold", fontSize: 28 }}>Hello world</Text>
-        <Text style={{ color: 'red', textTransform: 'uppercase' }}>Hello world2</Text>
-        <Image source={require('./assets/adaptive-icon.png')}
-          style={{ height: 200, width: 200 }}
-        />
-        <Image source={{ uri: "https://picsum.photos/200/300" }}
-          style={{ height: 200, width: 200 }}
-        />
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis commodi quaerat deleniti nam rerum eos quo, expedita omnis architecto corrupti, repellendus unde doloremque obcaecati ut iusto itaque temporibus cupiditate, facilis voluptate. Error consectetur provident veritatis, perferendis eos, atque, reiciendis facilis minus architecto id nesciunt cupiditate beatae quidem dolore nihil rem!
-        </Text>
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis commodi quaerat deleniti nam rerum eos quo, expedita omnis architecto corrupti, repellendus unde doloremque obcaecati ut iusto itaque temporibus cupiditate, facilis voluptate. Error consectetur provident veritatis, perferendis eos, atque, reiciendis facilis minus architecto id nesciunt cupiditate beatae quidem dolore nihil rem!
-        </Text>
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis commodi quaerat deleniti nam rerum eos quo, expedita omnis architecto corrupti, repellendus unde doloremque obcaecati ut iusto itaque temporibus cupiditate, facilis voluptate. Error consectetur provident veritatis, perferendis eos, atque, reiciendis facilis minus architecto id nesciunt cupiditate beatae quidem dolore nihil rem!
-        </Text>
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis commodi quaerat deleniti nam rerum eos quo, expedita omnis architecto corrupti, repellendus unde doloremque obcaecati ut iusto itaque temporibus cupiditate, facilis voluptate. Error consectetur provident veritatis, perferendis eos, atque, reiciendis facilis minus architecto id nesciunt cupiditate beatae quidem dolore nihil rem!
-        </Text>
-        <Text style={styles.textContainer}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis commodi quaerat deleniti nam rerum eos quo, expedita omnis architecto corrupti, repellendus unde doloremque obcaecati ut iusto itaque temporibus cupiditate, facilis voluptate. Error consectetur provident veritatis, perferendis eos, atque, reiciendis facilis minus architecto id nesciunt cupiditate beatae quidem dolore nihil rem!
-        </Text>
-      </ScrollView>
+      <Header title="screen 1" />
+      <Header title="screen 2" />
+      <Header title="screen 3" />
+      <Header title="screen 4" />
+      <Header title="screen 5" />
+      <Text>{name}</Text>
+      <Button title='Change it to full name' onPress={()=>{setName("arman Kabir")}}></Button>
     </View>
   );
+};
+function Header(props){
+  const {title} = props;
+  return (
+    <View style={{backgroundColor:'red',marginVertical:20,height:60,alignItems:"center",justifyContent:'center',padding:10}}>
+      <Text>{title}</Text>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
