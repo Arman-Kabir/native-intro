@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, StyleSheet, Text, ActivityIndicator } from 'react-native';
+import { View, StyleSheet, Text, ActivityIndicator, ImageBackground, Image } from 'react-native';
 import { useFonts, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter';
 
 export default function App() {
@@ -14,11 +14,23 @@ export default function App() {
         )
     }
     return (
-        <View style={styles.container}>
-            <Text style={{ fontFamily: "Inter-Regular" }}>A good app</Text>
-            <Text style={{fontFamily:"Inter-Bold"}}>A good app bold</Text>
-            <StatusBar style="auto"></StatusBar>
-        </View>
+        <ImageBackground
+            source={require('./assets/light-bg.png')}
+            style={{ flex: 1 }}
+        >
+            <View style={{ flex: 1, justifyContent: 'space-between', marginTop: 32, paddingHorizontal: 26 }}>
+                {/* Upper portion */}
+                <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flex: 1 }}>
+                        <Text style={{ fontFamily: 'Inter-Regular', fontSize: 12, color: '#fff' }}> Lorem ipsum dolor sit amet consectetur adipisicing elit. In earum laudantium explicabo delectus nisi reiciendis sed nesciunt nulla id, ipsa harum suscipit ab, animi vero? </Text>
+                        <Text style={{ fontFamily: 'Inter-Bold', color: '#fff', fontSize: 12,marginTop:8 }}>Ada lovelace</Text>
+                    </View>
+                    <Image source={require('./assets/refresh.png')}></Image>
+                </View>
+                <View></View>
+            </View>
+        </ImageBackground >
+
     );
 };
 
