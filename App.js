@@ -2,6 +2,23 @@ import { StatusBar } from 'expo-status-bar';
 import { View, StyleSheet, Text, ActivityIndicator, ImageBackground, Image, Pressable, TouchableOpacity } from 'react-native';
 import { useFonts, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter';
 
+const RowView = ({ label, value }) => {
+    return (
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between',alignItems:'center',marginBottom:8 }}>
+            <View>
+                <Text style={{ fontFamily: 'Inter-Regular', color: '#303030', fontSize: 10, letterSpacing: 2,textTransform:'uppercase' }}>
+                    {label}
+                </Text>
+            </View>
+            <View>
+                <Text style={{ fontFamily: 'Inter-Bold', color: '#303030', fontSize: 20, letterSpacing: 2 }}>
+                    {value}
+                </Text>
+            </View>
+        </View>
+    )
+}
+
 export default function App() {
     let [fontsLoaded] = useFonts({
         "Inter-Regular": Inter_400Regular,
@@ -18,6 +35,7 @@ export default function App() {
             source={require('./assets/light-bg.png')}
             style={{ flex: 1 }}
         >
+            {/* Parent view */}
             <View style={{ flex: 1, justifyContent: 'space-between', marginTop: 32, paddingHorizontal: 26 }}>
                 {/* Upper portion */}
                 <View style={{ flexDirection: 'row' }}>
@@ -28,7 +46,7 @@ export default function App() {
                     <Image source={require('./assets/refresh.png')}></Image>
                 </View>
                 {/* Bottom portion */}
-                <View style={{ marginBottom: 36 }}>
+                <View style={{ marginBottom: 36, alignItems: 'flex-start' }}>
                     <View style={{ flexDirection: "row", alignItems: 'center' }}>
                         <Image source={require('./assets/sun.png')}></Image>
                         <Text style={{ fontFamily: 'Inter-Regular', fontSize: 15, color: 'white', marginLeft: 8, letterSpacing: 5 }}>Good Morning</Text>
@@ -44,11 +62,19 @@ export default function App() {
                     </View>
 
                     {/* button */}
-                    <TouchableOpacity onPress={() => { }} style={{ flexDirection: 'row', height: 40, width: 115, backgroundColor: '#fff', borderRadius: 30, margin: 50, justifyContent: 'space-between', paddingLeft: 16, paddingRight: 4, alignItems: 'center' }}>
+                    <TouchableOpacity onPress={() => { }} style={{ flexDirection: 'row', height: 40, width: 115, backgroundColor: '#fff', borderRadius: 30, marginTop: 50, justifyContent: 'space-between', paddingLeft: 16, paddingRight: 4, alignItems: 'center' }}>
                         <Text style={{ fontFamily: "Inter-Bold", fontSize: 12, color: "#000", letterSpacing: 3 }}>  MORE</Text>
                         <Image source={require('./assets/arrow-down.png')}></Image>
                     </TouchableOpacity>
                 </View>
+            </View>
+
+            {/* Expanded view */}
+            <View style={{ backgroundColor: '#fff', opacity: .8, paddingVertical: 48, paddingHorizontal: 26 }}>
+                <RowView label={"current TImezone"} value={"Europe/London"}></RowView>
+                <RowView label={"Day of the year"} value={"290"}></RowView>
+                <RowView label={"Day of the week"} value={"5"}></RowView>
+                <RowView label={"week number"} value={"42"}></RowView>
             </View>
         </ImageBackground >
 
