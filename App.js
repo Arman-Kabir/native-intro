@@ -23,11 +23,26 @@ export default function App() {
                 <View style={{ flexDirection: 'row' }}>
                     <View style={{ flex: 1 }}>
                         <Text style={{ fontFamily: 'Inter-Regular', fontSize: 12, color: '#fff' }}> Lorem ipsum dolor sit amet consectetur adipisicing elit. In earum laudantium explicabo delectus nisi reiciendis sed nesciunt nulla id, ipsa harum suscipit ab, animi vero? </Text>
-                        <Text style={{ fontFamily: 'Inter-Bold', color: '#fff', fontSize: 12,marginTop:8 }}>Ada lovelace</Text>
+                        <Text style={{ fontFamily: 'Inter-Bold', color: '#fff', fontSize: 12, marginTop: 8 }}>Ada lovelace</Text>
                     </View>
                     <Image source={require('./assets/refresh.png')}></Image>
                 </View>
-                <View></View>
+                {/* Bottom portion */}
+                <View style={{ marginBottom: 36 }}>
+                    <View style={{ flexDirection: "row", alignItems: 'center' }}>
+                        <Image source={require('./assets/sun.png')}></Image>
+                        <Text style={{ fontFamily: 'Inter-Regular', fontSize: 15, color: 'white', marginLeft: 8, letterSpacing: 5 }}>Good Morning</Text>
+                    </View>
+                    <View style={{ marginTop: 8 }}>
+                        <Text>
+                            <Text style={{ fontSize: 100, color: '#fff', fontFamily: 'Inter-Bold' }}>11.30</Text>
+                            <Text style={{ color: 'white', fontFamily: 'Inter-Regular' }}>BST</Text>
+                        </Text>
+                    </View>
+                    <View style={{ marginTop: 8 }}>
+                        <Text style={{ color: 'white', letterSpacing: 3, fontFamily: 'Inter-Bold',fontSize:15 }}>In LonDOn, UK</Text>
+                    </View>
+                </View>
             </View>
         </ImageBackground >
 
