@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, StyleSheet, Text, ActivityIndicator, ImageBackground, Image } from 'react-native';
+import { View, StyleSheet, Text, ActivityIndicator, ImageBackground, Image, Pressable, TouchableOpacity } from 'react-native';
 import { useFonts, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter';
 
 export default function App() {
@@ -40,8 +40,14 @@ export default function App() {
                         </Text>
                     </View>
                     <View style={{ marginTop: 8 }}>
-                        <Text style={{ color: 'white', letterSpacing: 3, fontFamily: 'Inter-Bold',fontSize:15 }}>In LonDOn, UK</Text>
+                        <Text style={{ color: 'white', letterSpacing: 3, fontFamily: 'Inter-Bold', fontSize: 15 }}>In LonDOn, UK</Text>
                     </View>
+
+                    {/* button */}
+                    <TouchableOpacity onPress={() => { }} style={{ flexDirection: 'row', height: 40, width: 115, backgroundColor: '#fff', borderRadius: 30, margin: 50, justifyContent: 'space-between', paddingLeft: 16, paddingRight: 4, alignItems: 'center' }}>
+                        <Text style={{ fontFamily: "Inter-Bold", fontSize: 12, color: "#000", letterSpacing: 3 }}>  MORE</Text>
+                        <Image source={require('./assets/arrow-down.png')}></Image>
+                    </TouchableOpacity>
                 </View>
             </View>
         </ImageBackground >
